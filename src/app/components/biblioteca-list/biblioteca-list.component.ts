@@ -18,7 +18,7 @@ export class BibliotecaListComponent implements OnInit {
   constructor(private bibliotecaService: BibliotecaService) { }
 
   ngOnInit(): void {
-    // Llamada a la función que obtiene las bibliotecas al inicializar el componente
+
     this.obtenerBibliotecas();
   }
 
@@ -38,8 +38,7 @@ export class BibliotecaListComponent implements OnInit {
     this.bibliotecaService.agregarBiblioteca(this.nombre, this.direccion, this.ciudad).subscribe(
       (response) => {
         console.log('Biblioteca agregada:', response);
-        // Puedes realizar acciones adicionales después de agregar la biblioteca
-        // Por ejemplo, volver a cargar la lista de bibliotecas
+
         this.obtenerBibliotecas();
       },
       (error) => {
