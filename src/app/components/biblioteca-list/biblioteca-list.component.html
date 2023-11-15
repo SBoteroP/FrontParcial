@@ -1,1 +1,32 @@
-<p>biblioteca-list works!</p>
+<div>
+  <h2>Listado de Bibliotecas</h2>
+  <ul>
+    <li *ngFor="let biblioteca of bibliotecas">
+      {{ biblioteca.nombre }} - {{ biblioteca.direccion }} - {{ biblioteca.ciudad }}
+    </li>
+  </ul>
+  <hr>
+
+  <div>
+    <h2>Agregar Nueva Biblioteca</h2>
+    <form (submit)="agregarNuevaBiblioteca()">
+      <div>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" [(ngModel)]="nombre" required>
+      </div>
+
+      <div>
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" [(ngModel)]="direccion" required>
+      </div>
+
+      <div>
+        <label for="ciudad">Ciudad:</label>
+        <input type="text" id="ciudad" [(ngModel)]="ciudad" required>
+      </div>
+
+      <button type="submit">Agregar Biblioteca</button>
+    </form>
+  </div>
+</div>
+
